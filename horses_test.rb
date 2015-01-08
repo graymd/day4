@@ -1,21 +1,32 @@
 horse_counter = 0
+horse_1_spot = 0
+horse_2_spot = 0
+horse_3_spot = 0
+horse_4_spot = 0
+speed_up = 1 #giddyup
+
+
+
 
 class Horses
 
 	attr_accessor :horse_pic
+	attr_accessor :horse_place
 	@@list_of_horses = []
 
 	def display_horses 	
 		puts "#{self.horse_pic}"
 	end
-
-	def self.list_of_horses
-		@@list_of_horses
-	end
 	
 	def initialize
 		Horses.list_of_horses.push(self)	
 	end
+	
+	def self.list_of_horses
+		@@list_of_horses
+	end
+
+	
 
 end
 
@@ -57,7 +68,51 @@ horse_4.horse_pic = "<-4-p"
 # 	horse_counter +=1
 # end
 
-puts @@list_of_horses
+Horses.list_of_horses.each do |h|
+	h.display_horses
+	track.display_horse_track
+end
+
+
+horse_1_spot * speed_up = rand(1...5) + horse_1_spot
+horse_2_spot = rand(1...5) + horse_2_spot
+horse_3_spot = rand(1...5) + horse_3_spot
+horse_4_spot = rand(1...5) + horse_4_spot
+
+if make_em_move = "giddyup"
+	speed_up = 3
+else
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # print horse_1.display_horses
@@ -66,12 +121,16 @@ puts @@list_of_horses
 # print horse_4.display_horses
 # print track.display_horse_track
 
-puts "Press the enter key to get your horse a moving"
-make_em_move = gets.chomp
-if make_em_move == "/n"
-	puts "Run horsey!  Run!"
-else
-	"Hit the enter key next time!"
+# puts "Press the enter key to get your horse a moving"
+# make_em_move = gets.chomp
+
+# if make_em_move == "giddyup"
+# 	puts "move faster"
+# else make_em_move
+# 	puts "lets go!"
+# end
+
+
 
 
 

@@ -53,12 +53,12 @@ class Car
 
 end
 
-# nicks_car = Car.new
-# nicks_car.make = "Lotus"
-# nicks_car.model = "Elise"
-# nicks_car.color = "Lazer Blue"
-# nicks_car.back_seats = 0
-# nicks_car.max_speed = 160
+nicks_car = Car.new
+nicks_car.make = "Lotus"
+nicks_car.model = "Elise"
+nicks_car.color = "Lazer Blue"
+nicks_car.back_seats = 0
+nicks_car.max_speed = 160
 
 # jackies_car = Car.new
 # jackies_car.make = "Nissan"
@@ -88,4 +88,4 @@ end
 # puts jackies_car.display_information
 # puts adams_car.display_information
 
-# p Car.list_of_cars
+p Car.list_of_cars
