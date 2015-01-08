@@ -5,7 +5,7 @@ horse_3_spot = 0
 horse_4_spot = 0
 speed_up = 1 #giddyup
 x = 0
-
+@game_on = true
 
 
 class Horses
@@ -33,7 +33,12 @@ class Horses
 	# end
 
 	def horse_mover #horse_position
-		self.horse_position = rand(10...50) + self.horse_position
+		if self.horse_position < 120
+			self.horse_position = rand(10...50) + self.horse_position
+		else
+			self.horse_position = 100
+			@game_on = false
+		end
 	end
 
 end
@@ -76,19 +81,19 @@ horse_4.horse_pic = "<-4-p"
 # 	horse_counter +=1
 # end
 
-
-# while Horses.horse_position < 101
-	while x<50
-		Horses.list_of_horses.each do |h|
-			h.display_horses
-			h.horse_mover
-			track.display_horse_track
-			x +=1
-		end
-		gets
+while @game_on = true #&& horse_position < 100
+	Horses.list_of_horses.each do |h|
+		h.display_horses
+		h.horse_mover
+		track.display_horse_track
+		puts h.horse_position
 	end
-# end
+	puts "keep going!"
+	gets
+	puts @game_on.inspect
+end
 
+puts "horse x won!"
 
 # horse_1_spot * speed_up = rand(1...5) + horse_1_spot
 # horse_2_spot = rand(1...5) + horse_2_spot
