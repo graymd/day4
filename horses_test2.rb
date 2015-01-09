@@ -12,6 +12,7 @@ class Horses
 	attr_accessor :horse_position
 	@@game_on = true
 	@@list_of_horses = []
+	@@horse_winner
 	#@@horse_position
 
 	def display_horses 	
@@ -31,23 +32,22 @@ class Horses
 		@@game_on
 	end
 
-	# def self.horse_position
-	# 	@@horse_position
-	# end
+	def self.horse_position
+		@@horse_winner
+	end
 
 	def horsey_position #horse_position
 		self.horse_position = rand(5...15) + self.horse_position
 		if self.horse_position > 117
-			self.horse_position = 117
-			@@game_on = false
-			
-			puts "#{self.horse_pic} is the winner!!"
+			# self.horse_position = 117
+			@@game_on = false	
+			@@horse_winner = self.horse_pic
 		end
 		puts self.horse_position
 	end
 
-	def horse_winner
-
+	def self.horse_winner
+		puts @@horse_winner
 	end
 
 end
@@ -58,7 +58,6 @@ class Track
 	def initialize
 		self.horse_track = "_" * 113 + "|"
 	end
-
 
 	def display_horse_track
 	puts "#{horse_track}"
@@ -78,18 +77,24 @@ horse_4 = Horses.new
 horse_4.horse_pic = "<-4-p"
 
 
-while Horses.game_on #&& horse_position < 100
-	Horses.list_of_horses.each do |h|
-		h.display_horses
-		h.horsey_position
-		track.display_horse_track
-	end
-	gets
-end
+# # system "clear"
+# while Horses.game_on #&& horse_position < 100
+# 	Horses.list_of_horses.each do |h|
+# 		h.display_horses
+# 		h.horsey_position
+# 		track.display_horse_track
 
 
-# track.display_horse_track
-## horse_1.display_horses
-# p Horses.list_of_horses.inspect
+
+# 	end
+# 	gets
+# 	# system "clear"
+# end
+
+# print "#{Horses.horse_winner} is the winner of this race!"
+
+# # track.display_horse_track
+# ## horse_1.display_horses
+# # p Horses.list_of_horses.inspect
 
 
