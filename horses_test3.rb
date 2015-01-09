@@ -82,24 +82,26 @@ horse_3.horse_pic = "<-3-p"
 horse_4 = Horse.new
 horse_4.horse_pic = "<-4-p"
 
+p list_of_horses
 
-while Horse.game_on #&& horse_position < 100
-	if user_input == "giddyup"
-		@@game_on = false
-		print "Horse #{horse_1.display_horses} wins"
-	else
-		Horse.list_of_horses.each do |h|
-			h.display_horses
-			h.position_of_horse
-			# check = h.position_of_horse
-			track.display_horse_track
-		end
 
-		user_input = gets.chomp
-	system "clear"
-	end
-end
-print "#{Horse.horse_winner} is the winner of this race!"
-puts " "
+# while Horse.game_on #&& horse_position < 100
+# 	if user_input == "giddyup"
+# 		@@game_on = false
+# 		print "Horse #{horse_1.display_horses} wins"
+# 	else
+# 		Horse.list_of_horses.each do |h|
+# 			h.display_horses
+# 			h.position_of_horse
+# 			# check = h.position_of_horse
+# 			track.display_horse_track
+# 		end
+
+# 		user_input = gets.chomp
+# 	system "clear"
+# 	end
+# end
+# print "#{Horse.horse_winner} is the winner of this race!"
+# puts " "
 
 

@@ -45,7 +45,7 @@ class Inventory
 			puts "Max Speed:"
 			hash[:max_speed] = gets.chomp
 			puts "Vin Number:"
-			hash[:vin_number] = gets.chomp
+			hash[:vin_number] = gets.chomp 
 			self.add_car(hash)
 			puts "Add another? y/n"
 			answer = gets.chomp
@@ -56,34 +56,34 @@ class Inventory
 	end
 end
 
-# zach_inventory = Inventory.new
+zach_inventory = Inventory.new
 
-# car1 = {
-# 	make: "Porsche",
-# 	color: "Midnight Blue",
-# 	model: "911 Turbo",
-# 	back_seats: 0,
-# 	max_speed: 200,
-# 	vin_number: "123"
-# }
+car1 = {
+	make: "Porsche",
+	color: "Midnight Blue",
+	model: "911 Turbo",
+	back_seats: 0,
+	max_speed: 200,
+	vin_number: "123"
+}
 
-# car2 = {
-# 	make: "Daewoo",
-# 	color: "Brown",
-# 	model: "Nubira",
-# 	back_seats: 4,
-# 	max_speed: 95,
-# 	vin_number: "456"
-# }
+car2 = {
+	make: "Daewoo",
+	color: "Brown",
+	model: "Nubira",
+	back_seats: 4,
+	max_speed: 95,
+	vin_number: "456"
+}
 
-# car3 = {
-# 	make: "Ford",
-# 	color: "Ruby Red",
-# 	model: "Fiesta",
-# 	back_seats: 3,
-# 	max_speed: 90,
-# 	vin_number: "789"
-# }
+car3 = {
+	make: "Ford",
+	color: "Ruby Red",
+	model: "Fiesta",
+	back_seats: 3,
+	max_speed: 90,
+	vin_number: "789"
+}
 # zach_inventory.add_car(car1)
 # zach_inventory.add_car(car2, car3)
 

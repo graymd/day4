@@ -35,8 +35,7 @@ class Horse
 
 	def position_of_horse
 		self.horse_position = rand(5...10) + self.horse_position
-		if self.horse_position > 117
-			# self.horse_position = 117
+		if self.horse_position > 112
 			@@game_on = false	
 			@@horse_winner = self.horse_pic
 		end
@@ -99,7 +98,10 @@ while Horse.game_on
 		end
 
 		user_input = gets.chomp
+	if Horse.game_on
 	system "clear"
+	else
+	end
 	end
 end
 if user_input != "giddyup"
@@ -109,22 +111,21 @@ else
 end
 
 
-if horse_1.horse_position > horse_2.horse_position && 
-	horse_1.horse_position > horse_2.horse_position &&
-	horse_1.horse_position > horse_3.horse_position &&
-	horse_1.horse_position > horse_4.horse_position
 
-print "#{horse_1.horse} is the winner!"
-
+if horses.horse_position > horse_2.horse_position && horses.horse_position > horse_3.horse_position && horses.horse_position > horse_4.horse_position
+	puts "One is the winner"
+elsif horse_2.horse_position > horse_3.horse_position && horse_2.horse_position > horse_4.horse_position
+	puts "Two is the winner"
+elsif horse_3.horse_position > horse_4.horse_position
+	puts "Three is the winner"
+else
+	puts "Four is the winner"
 end
 
-
-
-
-
-
-
-
+puts "Horse 1 position was: #{horses.horse_position}"
+puts "Horse 2 position was: #{horse_2.horse_position}"
+puts "Horse 3 position was: #{horse_3.horse_position}"
+puts "Horse 4 position was: #{horse_4.horse_position}"
 
 
 
