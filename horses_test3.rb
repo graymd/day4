@@ -5,14 +5,13 @@ horse_3_spot = 0
 horse_4_spot = 0
 speed_up = 1 #giddyup
 x = 0
-
+@game_on = true
 
 
 class Horses
 
 	attr_accessor :horse_pic
 	attr_accessor :horse_position
-	@@game_on = true
 	@@list_of_horses = []
 	#@@horse_position
 
@@ -29,24 +28,10 @@ class Horses
 		@@list_of_horses
 	end
 
-	def self.game_on
-		@@game_on
-	end
-
 	# def self.horse_position
 	# 	@@horse_position
 	# end
 
-	def horsey_position #horse_position
-		self.horse_position = rand(10...50) + self.horse_position
-		if self.horse_position > 120
-			self.horse_position = 120
-			@@game_on = false
-		end
-		puts self.horse_position
-	end
-
-	def horse_winner
 
 	end
 
@@ -54,10 +39,19 @@ end
 
 class Track
 	attr_accessor :horse_track
+	attr_accessor :horse_position
+	@@position_of_horses = []
 
 	def initialize
 		self.horse_track = "_" * 100 + "|"
+		self.position_of_horses = [0, 0, 0, 0]
 	end
+
+	def horse_mover 
+		for x 
+			self.position_of_horses[x].push(x)
+		else
+		end
 
 
 	def display_horse_track
@@ -90,14 +84,16 @@ horse_4.horse_pic = "<-4-p"
 # 	horse_counter +=1
 # end
 
-while Horses.game_on #&& horse_position < 100
+while @game_on = true #&& horse_position < 100
 	Horses.list_of_horses.each do |h|
 		h.display_horses
-		h.horsey_position
+		h.horse_mover
 		track.display_horse_track
+		puts h.horse_position
 	end
 	puts "keep going!"
 	gets
+	puts @game_on.inspect
 end
 
 puts "horse x won!"
