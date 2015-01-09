@@ -6,8 +6,6 @@ horse_4_spot = 0
 speed_up = 1 #giddyup
 x = 0
 
-
-
 class Horses
 
 	attr_accessor :horse_pic
@@ -38,10 +36,12 @@ class Horses
 	# end
 
 	def horsey_position #horse_position
-		self.horse_position = rand(10...50) + self.horse_position
-		if self.horse_position > 120
-			self.horse_position = 120
+		self.horse_position = rand(5...15) + self.horse_position
+		if self.horse_position > 117
+			self.horse_position = 117
 			@@game_on = false
+			
+			puts "#{self.horse_pic} is the winner!!"
 		end
 		puts self.horse_position
 	end
@@ -56,14 +56,14 @@ class Track
 	attr_accessor :horse_track
 
 	def initialize
-		self.horse_track = "_" * 100 + "|"
+		self.horse_track = "_" * 113 + "|"
 	end
 
 
 	def display_horse_track
 	puts "#{horse_track}"
-
 	end
+
 end
 
 horses = Horses.new
@@ -78,104 +78,18 @@ horse_4 = Horses.new
 horse_4.horse_pic = "<-4-p"
 
 
-# Horses.list_of_horses do |h|
-# 	display_horses
-# end
-
-# puts Horses.list_of_horses
-
-
-# if horse_counter < 4 do |horseys|
-# # 	horse_display = 
-# 	horse_counter +=1
-# end
-
 while Horses.game_on #&& horse_position < 100
 	Horses.list_of_horses.each do |h|
 		h.display_horses
 		h.horsey_position
 		track.display_horse_track
 	end
-	puts "keep going!"
 	gets
 end
 
-puts "horse x won!"
 
-# horse_1_spot * speed_up = rand(1...5) + horse_1_spot
-# horse_2_spot = rand(1...5) + horse_2_spot
-# horse_3_spot = rand(1...5) + horse_3_spot
-# horse_4_spot = rand(1...5) + horse_4_spot
-
-# make_em_move = gets.chomp
-
-# if make_em_move == "giddyup"
-# 	speed_up = 3
-# else
-# end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# print horse_1.display_horses
-# print horse_2.display_horses
-# print horse_3.display_horses
-# print horse_4.display_horses
-# print track.display_horse_track
-
-# puts "Press the enter key to get your horse a moving"
-# make_em_move = gets.chomp
-
-# if make_em_move == "giddyup"
-# 	puts "move faster"
-# else make_em_move
-# 	puts "lets go!"
-# end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# track.display_horse_track
+## horse_1.display_horses
+# p Horses.list_of_horses.inspect
 
 
