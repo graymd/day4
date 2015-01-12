@@ -55,16 +55,35 @@ class Order
 	end
 
 	def tally_order
-		total_price = 0
-		
-			end
+		# x = 0
+		# total_price = 0
+		# while x < 3 #self.order_data.count
+			# Meal.list_of_meals.each do |check|
+				# puts check.list_of_meals[:price]
+				# if check[:name] == order_data[x]
+				# total_price = check[:price] + total_price
+				# x += 1
+				# end
+				# puts check.list_of_meals
+			# end
+		# end
+	end
+
+	def display_order
+		puts self.order_data
+	end
+
+	def testing
+		if self.order_data[0] == Meal.list_of_meals[0][:name]
+			puts "correct"
+		else
+			puts "incorrect"
 		end
 	end
 
+
+
 end
-
-
-
 
 meal1 = Meal.new
 meal1.name = "Steak"
@@ -85,7 +104,10 @@ end
 
 new_order = Order.new
 new_order.populate_order
-new_order.tally_order
+# new_order.tally_order
+
+new_order.display_order
+p Meal.list_of_meals[0]
 
 
 
@@ -94,12 +116,10 @@ new_order.tally_order
 
 
 
+# puts "testing below"
 
-
-
-
-
-
+# p Meal.list_of_meals
+# puts "meal info: #{meal1}"
 
 
 

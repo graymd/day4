@@ -2,11 +2,11 @@ total_price = 0
 x = 0
 
 hash = [{
-	 name: "kitter",
+	 name: "Maddie",
 	 price: 50
 	 },
 	 {
-	 name: "Maddie",
+	 name: "kitter",
 	 price: 100
 
 }]

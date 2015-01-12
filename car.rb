@@ -67,11 +67,11 @@ jackies_car.model = "Versa"
 jackies_car.back_seats = 3
 jackies_car.max_speed = 105
 
-adams_car = Car.new
+# adams_car = Car.new
 
 # p adams_car
 # p nicks_car
-p jackies_car
+# p jackies_car
 # p adams_car
 
 # class Float
@@ -84,8 +84,8 @@ p jackies_car
 # a = "Hey Ryan!"
 # a.methodname
 
-puts nicks_car.display_information
+# puts nicks_car.display_information
 # puts jackies_car.display_information
 # puts adams_car.display_information
 
-# p Car.list_of_cars
+p Car.list_of_cars
