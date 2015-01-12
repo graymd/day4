@@ -71,7 +71,7 @@ adams_car = Car.new
 
 # p adams_car
 # p nicks_car
-# p jackies_car
+p jackies_car
 # p adams_car
 
 # class Float

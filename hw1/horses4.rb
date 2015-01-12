@@ -22,7 +22,6 @@ class Horse
 	def initialize
 		Horse.list_of_horses.push(self)
 		self.horse_position = 0
-		self.horse_pic = "<-1-p"
 	end
 	
 	def self.list_of_horses
@@ -52,7 +51,7 @@ class Horse
 	end
 
 	def cheat_for_horse_win
-		puts "#{self.horse_pic} is a cheater and has been DQd - run the race again!"
+		puts "#{horse_1_pic} is a cheater and has been DQd!  Cheaters NEVER Win!"
 		@@game_on = false	
 	end
 
@@ -72,17 +71,15 @@ class Track
 	end
 end
 
-horses = Horse.new
 track = Track.new
+horse_1 = Horse.new
+horse_1.horse_pic = "<-1-p"
 horse_2 = Horse.new
 horse_2.horse_pic = "<-2-p"
-horse_2.horse_position = 0
 horse_3 = Horse.new
 horse_3.horse_pic = "<-3-p"
-horse_3.horse_position = 0
 horse_4 = Horse.new
 horse_4.horse_pic = "<-4-p"
-horse_4.horse_position = 0
 
 # print @@list_of_horses[0]
 
@@ -111,21 +108,30 @@ else
 end
 
 
+# if any of the horses tie then the two horses should be shown as winners!
+# horse_position_array = []
+# horse_position_array.push(horses.horse_position)
+# horse_position_array.push(horse_2.horse_position)
+# horse_position_array.push(horse_3.horse_position)
+# horse_position_array.push(horse_4.horse_position)
 
-if horses.horse_position > horse_2.horse_position && horses.horse_position > horse_3.horse_position && horses.horse_position > horse_4.horse_position
-	puts "One is the winner"
-elsif horse_2.horse_position > horse_3.horse_position && horse_2.horse_position > horse_4.horse_position
-	puts "Two is the winner"
-elsif horse_3.horse_position > horse_4.horse_position
-	puts "Three is the winner"
-else
-	puts "Four is the winner"
-end
+# p horse_position_array
+# puts horse_position_array.max
 
-puts "Horse 1 position was: #{horses.horse_position}"
-puts "Horse 2 position was: #{horse_2.horse_position}"
-puts "Horse 3 position was: #{horse_3.horse_position}"
-puts "Horse 4 position was: #{horse_4.horse_position}"
+# if horses.horse_position > horse_2.horse_position && horses.horse_position > horse_3.horse_position && horses.horse_position > horse_4.horse_position
+# 	puts "One is the winner"
+# elsif horse_2.horse_position > horse_3.horse_position && horse_2.horse_position > horse_4.horse_position
+# 	puts "Two is the winner"
+# elsif horse_3.horse_position > horse_4.horse_position
+# 	puts "Three is the winner"
+# else
+# 	puts "Four is the winner"
+# end
+
+# puts "Horse 1 position was: #{horses.horse_position}"
+# puts "Horse 2 position was: #{horse_2.horse_position}"
+# puts "Horse 3 position was: #{horse_3.horse_position}"
+# puts "Horse 4 position was: #{horse_4.horse_position}"
 
 
 

@@ -84,18 +84,18 @@ car3 = {
 	max_speed: 90,
 	vin_number: "789"
 }
-# zach_inventory.add_car(car1)
-# zach_inventory.add_car(car2, car3)
+zach_inventory.add_car(car1)
+zach_inventory.add_car(car2, car3)
 
-# p zach_inventory.car_data
+p zach_inventory.car_data
 
 # zach_inventory.remove_car("456")
 
 # p zach_inventory.car_data
 
 
-zach_inventory = Inventory.new
-p zach_inventory
+# zach_inventory = Inventory.new
+# p zach_inventory
 # zach_inventory.populate_cars
 
 
