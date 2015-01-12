@@ -1,12 +1,5 @@
-horse_counter = 0
-horse_1_spot = 0
-horse_2_spot = 0
-horse_3_spot = 0
-horse_4_spot = 0
-speed_up = 1 #giddyup
-x = 0
-user_input =""
 
+user_input = ""
 class Horse
 
 	attr_accessor :horse_pic
@@ -14,6 +7,7 @@ class Horse
 	@@game_on = true
 	@@list_of_horses = []
 	@@horse_winner = ""
+	@@position_array = []
 
 	def display_horses
 			print "," * self.horse_position + "#{self.horse_pic}"
@@ -28,31 +22,27 @@ class Horse
 		@@list_of_horses
 	end
 
+	def self.position_array
+		@@position_array
+	end
+
 	def self.game_on
 		@@game_on
 	end
 
 	def position_of_horse
-		self.horse_position = rand(5...10) + self.horse_position
-		if self.horse_position > 112
+		self.horse_position = rand(5...10) + self.horse_position	
+		if self.horse_position > 120
 			@@game_on = false	
 			@@horse_winner = self.horse_pic
+			Horse.position_array.push(self.horse_position)
 		end
 		puts self.horse_position
-	end
 
-	def farthest_horse
-		if self.horse_position
-		end
 	end
 
 	def self.horse_winner
 		print @@horse_winner
-	end
-
-	def cheat_for_horse_win
-		puts "#{horse_1_pic} is a cheater and has been DQd!  Cheaters NEVER Win!"
-		@@game_on = false	
 	end
 
 end
@@ -63,7 +53,7 @@ class Track
 	attr_accessor :horse_track
 
 	def initialize
-		self.horse_track = "_" * 113 + "|"
+		self.horse_track = "_" * 119 + "|"
 	end
 
 	def display_horse_track
@@ -85,9 +75,8 @@ horse_4.horse_pic = "<-4-p"
 
 while Horse.game_on
 	if user_input == "giddyup"
-		horses.cheat_for_horse_win
-
-	else
+		horse_1.horse_position = (horse_1.horse_position * 1.5).to_i
+	end
 		Horse.list_of_horses.each do |h|
 			h.display_horses
 			h.position_of_horse
@@ -99,58 +88,12 @@ while Horse.game_on
 	system "clear"
 	else
 	end
-	end
+	
 end
 if user_input != "giddyup"
 	print "#{Horse.horse_winner} is the winner of this race!"
 	puts " "
 else
 end
-
-
-# if any of the horses tie then the two horses should be shown as winners!
-# horse_position_array = []
-# horse_position_array.push(horses.horse_position)
-# horse_position_array.push(horse_2.horse_position)
-# horse_position_array.push(horse_3.horse_position)
-# horse_position_array.push(horse_4.horse_position)
-
-# p horse_position_array
-# puts horse_position_array.max
-
-# if horses.horse_position > horse_2.horse_position && horses.horse_position > horse_3.horse_position && horses.horse_position > horse_4.horse_position
-# 	puts "One is the winner"
-# elsif horse_2.horse_position > horse_3.horse_position && horse_2.horse_position > horse_4.horse_position
-# 	puts "Two is the winner"
-# elsif horse_3.horse_position > horse_4.horse_position
-# 	puts "Three is the winner"
-# else
-# 	puts "Four is the winner"
-# end
-
-# puts "Horse 1 position was: #{horses.horse_position}"
-# puts "Horse 2 position was: #{horse_2.horse_position}"
-# puts "Horse 3 position was: #{horse_3.horse_position}"
-# puts "Horse 4 position was: #{horse_4.horse_position}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
